@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Page Title</title>
+    <title>Home | Farhan Adnan</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <!-- Your content goes here -->
-    <h1>Welcome to My Website</h1>
-    <p>This is a basic paragraph within the body of the HTML document.</p>
-    <h1 class="text-4xl font-bold text-center mt-10">Hello World</h1>
+    <div id="navbar-container"></div>
+
+    <h1 class="text-4xl font-bold text-center mt-24 mb-10">Farhan Adnan</h1>
+    <p class="text-center text-xl">
+        Student at the
+        <a href="https://www.cs.wisc.edu" class="text-blue-600 hover:underline"> University of Wisconsin-Madison</a>
+         studying computer science and mathematics.
+      </p>      
+    <p class="text-center text-black/50"> Interested in Bioinformatics, Cloud Architecture, Distributed Systems, Cybersecurity, and more </p>
 </body>
 </html>
+
+<script>
+    fetch('components/navbar.html')
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('navbar-container').innerHTML = html;
+        })
+        .catch(err => console.error('Error loading navbar:', err));
+</script>
 
